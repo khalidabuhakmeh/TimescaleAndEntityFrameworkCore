@@ -11,7 +11,7 @@ PostgreSQL/TimescaleDB.
 Before looking at the code in the repository, I recommend setting up a docker container with
 a PostgreSQL database with the TimescaleDB extension enabled.
 
-```console
+```bash
 docker pull timescale/timescaledb-ha:pg14-latest
 docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=password timescale/timescaledb-ha:pg14-latest
 ```
@@ -20,7 +20,7 @@ You'll also want the [sample data from TimescaleDocs](https://assets.timescale.c
 
 First, you'll want to run the database migrations in the solution.
 
-```console
+```bash
 dotnet tool restore
 dotnet ef database update
 ```
