@@ -30,7 +30,8 @@ namespace TimescaleSample.Migrations
                    avg("Price")           as "Average"
             FROM "Stocks" srt
                      inner join "Companies" C on C."Symbol" = srt."Symbol"
-            WHERE "Time" > "value" - INTERVAL '1 week'
+            WHERE "Time" > "value" - INTERVAL '1 week' 
+            AND  "Time" <= "value" 
             GROUP BY srt."Symbol", "Name"
             ORDER BY "End" DESC;
             $func$;
